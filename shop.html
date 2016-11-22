@@ -8,7 +8,8 @@
     <header class="main-header">
       <div class="container">
         <nav class="main-navigation">
-          <ul>
+           <img src="img/logo-small.png" width="111" height="24" alt=""> <!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! -->
+           <ul>
             <li>
               <a href="#">Информация</a>
             </li>
@@ -42,56 +43,103 @@
       </div>
     <div class="shop-navigation">
      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-      <h2>Производители:</h2>
-      <input type="checkbox" name="manufacturer1" id="baxter" checked>Baxter of California
-      <input type="checkbox" name="manufacturer2" id="natty">Mr.Natty
-      <input type="checkbox" name="manufacturer3" id="suave" checked>Suavecito
-      <input type="checkbox" name="manufacturer4" id="malin">Malin+Goetz
-      <input type="checkbox" name="manufacturer5" id="murr">Murray's
-      <input type="checkbox" name="manufacturer6" id="amcrew" checked>American Crew
-      <h2>Группы товаров:</h2>
-      <input type="radio" name="group" id="shaving">Бритвенные принадлежности
-      <input type="radio" name="group" id="care" checked>Средства для ухода
-      <input type="radio" name="group" id="accessories">Аксессуары
+     <fieldset>
+       <legend>Производители:</legend> <!-- ТАК КОРРЕКТНЕЙ ЧЕМ H2!!!! -->
+        <input type="checkbox" name="manufacturer1" id="baxter" checked>Baxter of California <!-- LABEL ЛУЧШЕ Б ЗАЮЗАТЬ!! -->
+        <input type="checkbox" name="manufacturer2" id="natty">Mr.Natty
+        <input type="checkbox" name="manufacturer3" id="suave" checked>Suavecito
+        <input type="checkbox" name="manufacturer4" id="malin">Malin+Goetz
+        <input type="checkbox" name="manufacturer5" id="murr">Murray's
+        <input type="checkbox" name="manufacturer6" id="amcrew" checked>American Crew
+     </fieldset>
+     <fieldset>
+       <legend>Группы товаров:
+         <input type="radio" name="group" id="shaving">Бритвенные принадлежности
+         <input type="radio" name="group" id="care" checked>Средства для ухода
+         <input type="radio" name="group" id="accessories">Аксессуары
+       </legend>
+      </fieldset>
       <button type="submit" class="btn">Показать</button>
-     </form>      
+     </form>       
     </div>
     <div class="shop-items">
       <div class="shop-items-item">
-        <img src="img/items/1med.jpg" alt="">
-        <p class="item-name_small">Набор для путешествий "Baxter of California"</p>
-        <span class="item-price">2 900 РУБ.</span>
-        <button class="btn item-buy">Купить</button>
-      </div>
-      <div class="shop-items-item">
-        <img src="img/items/2med.jpg" alt="">
-        <p class="item-name_small">Увлажняющий кондиционер "Baxter of California"</p>
-        <span class="item-price">750 РУБ.</span>
-        <button class="btn item-buy">Купить</button>
-      </div>
-      <div class="shop-items-item">
         <img src="img/items/3med.jpg" alt="">
-        <p class="item-name_small">Гель для волос "Suavecito"</p>
-        <span class="item-price">290 РУБ.</span>
-        <button class="btn item-buy">Купить</button>
+        <div class="item-name">
+          <a href="#">
+            <span class="item-name-type">Набор для путешествий</span><br>
+            <span class="item-name-brand">"Baxter of California"</span>
+          </a>
+        </div>
+        <div class="item-price_buy">
+          <span class="item-price">2 900 РУБ.</span>
+          <a href="#" class="btn item-buy">Купить</a> <!-- Я ТУТ СТАВИЛ БАТТОН НО Я ЗАБЫЛ ЧТО НАДА ФОРМУ ДЛЯ БАТТОНА Ж ЕЩЁ А ТАК ПОЛУЧАЕТСЯ МЕНЬШЕ НАМНОГО КОДА!!! -->
+        </div>        
       </div>
       <div class="shop-items-item">
         <img src="img/items/4med.jpg" alt="">
-        <p class="item-name_small">Гель для укладки волос "American  Crew"</p>
-        <span class="item-price">500 РУБ.</span>
-        <button class="btn item-buy">Купить</button>
+        <div class="item-name">
+          <a href="#">
+            <span class="item-name-type">Увлажняющий кондиционер</span><br>
+            <span class="item-name-brand">"Baxter of California"</span>
+          </a>
+        </div>
+        <div class="item-price_buy">
+          <span class="item-price">750 РУБ.</span>
+          <a href="#" class="btn item-buy">Купить</a>
+        </div>        
       </div>
       <div class="shop-items-item">
         <img src="img/items/5med.jpg" alt="">
-        <p class="item-name_small">Гель для волос "American  Crew"</p>
-        <span class="item-price">300 РУБ.</span>
-        <button class="btn item-buy">Купить</button>
+        <div class="item-name">
+          <a href="#">
+            <span class="item-name-type">Гель для волос</span><br>
+            <span class="item-name-brand">"Suavecito"</span>
+          </a>
+        </div>
+        <div class="item-price_buy">
+          <span class="item-price">290 РУБ.</span>
+          <a  href="#" class="btn item-buy">Купить</a>
+        </div>        
       </div>
       <div class="shop-items-item">
         <img src="img/items/6med.jpg" alt="">
-        <p class="item-name_small">Набор для бритья "Baxter of California"</p>
-        <span class="item-price">3 900 РУБ.</span>
-        <button class="btn item-buy">Купить</button>
+        <div class="item-name">
+          <a href="#">
+            <span class="item-name-type">Гель для укладки волос</span><br>
+            <span class="item-name-brand">"American  Crew"</span>
+          </a>
+        </div>
+        <div class="item-price_buy">
+          <span class="item-price">500 РУБ.</span>
+          <a href="#" class="btn item-buy">Купить</a>
+        </div>        
+      </div>
+      <div class="shop-items-item">
+        <img src="img/items/7med.jpg" alt="">
+        <div class="item-name">
+          <a href="#">
+            <span class="item-name-type">Гель для волос</span><br>
+            <span class="item-name-brand">"American  Crew"</span>
+          </a>
+        </div>
+        <div class="item-price_buy">
+          <span class="item-price">300 РУБ.</span>
+          <a href="#" class="btn item-buy">Купить</a>
+        </div>        
+      </div>
+      <div class="shop-items-item">
+        <img src="img/items/8med.jpg" alt="">
+        <div class="item-name">
+          <a href="#">
+            <span class="item-name-type">Набор для бритья</span><br>
+            <span class="item-name-brand">"Baxter of California"</span>
+          </a>
+        </div>
+        <div class="item-price_buy">
+          <span class="item-price">3 900 РУБ.</span>
+          <a href="#" class="btn item-buy">Купить</a>
+        </div>
       </div>
     </div>
      <div class="shop-pages">
