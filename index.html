@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Барбершоп "Бородинский"</title>
+  </head>
+  <body>
+    <header class="main-header">  <!-- хэдер вообще весь -->
+      <div class="container"> <!-- для  того чтоб отцентровать содержимое (почему отдельный нужен блок объяснят на след лекцииы) -->
+        <nav class="main-navigation"> <!-- main menu -->
+          <ul> <!-- классы не стал давать отдельные ВЕРОЯТНО тк задастся без проблем и так ul внутри nav -->
+            <li> <!--usually people use LISTS FOR MENU!! -->
+              <a href="#">Информация</a>
+            </li>
+            <li>
+              <a href="#">Новости</a>
+            </li>
+            <li>
+              <a href="#">Прайс-лист</a>
+            </li>
+            <li>
+              <a href="#">Магазин</a>
+            </li>
+            <li>
+              <a href="#">Контакты</a>
+            </li>            
+          </ul>
+        </nav>
+        <div class="user-block"> <!-- login/logout etc -->
+          <a class="login" href="#">Вход</a>
+        </div>        
+      </div>
+    </header>
+    <main class="container"> <!-- всё между хэдером и футером, container присвоен тоже для отцентровки (вообще main может быть только 1 на странице!) -->
+      <div class="index-logo"> <!-- это уже для главного лого чтоб отцентровать тоже -->
+        <img src="img/index-logo.png" width="368" weight="204" alt="Барбершоп "Бородинский"">
+      </div>
+      <section class="features"> <!-- ключевые фичи уже секцией тк это обособленный типа блок более, содержательный!!! -->  
+       <div class="features-item"> <!-- тут уже по ПРОСТРАНСТВУ ИМЁН ВЛОЖЕННОСТЬ ВИДНА ПО НАЗВАНИЮ! -->
+         <b class="features-name">Быстро</b> <!-- можно и не b но в общем неплохой вариант... для ромбиков всяких НЕ НУЖНЫ ДИВЫ ЕТЦ ТК ЭТО ЧИСТО ДЕКОРАТИВНЫЙ ИНСТРУМЕНТ!!! -->
+         <p>Мы делаем свою работу быстро! Два часа пролетят незаметно и вы - счастливый обладатель стильной стрижки-минутки!</p>
+       </div>   
+       <div class="features-item">
+         <b class="features-name">Круто</b>
+         <p>Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино! Во всяком случае внешне</p>
+       </div>   
+       <div class="features-item">
+         <b class="features-name">Дорого</b>
+         <p>Наши мастера - профессионалы своего дела и не могут стоить дешево. К тому же, разве цена не дает определенный статус?</p>
+       </div>                      
+      </section>
+      <div class="index-content"> <!-- тут не секция тк хер назовёшь как нормально эти два склеенных блока новостей и тп.. -->
+        <div class="index-content-left"> <!-- колонки куда вложим уже элементы -->
+          <h2 class="index-content-title">Новости</h2>
+          <ul class="news-preview">
+            <li>
+              <p>Нам наконец завезли Ягермайстер! Теперь вы можете пропустить стаканчик во время стрижки!</p>
+              <time datetime="2016-01-11">11 января</time>
+            </li>
+            <li>
+              <p>В нашей команде пополнение, Борис "Бритва" Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды</p>
+              <time datetime="2016-01-18">18 января</time>
+            </li>            
+          </ul>
+          <a class="btn" href="#">Все новости</a>
+        </div>
+        <div class="index-content-right">
+          <h2 class="index-content-title">Фотогалерея</h2>
+          <div class="gallery"> <!-- общая обёртка галереи -->
+            <figure class="gallery-content"> <!-- сама картинка тут будет -->
+              <img src="img/photo-1.jpg" width="286" height="164" alt=""> 
+            </figure>
+            <button class="btn gallery-prev">Назад</button> <!--тут именно кнопки нужны уже -->
+            <button class="btn gallery-next">Вперёд</button>               </div>
+        </div>
+      </div>
+      <div class="index-content">
+        <div class="index-content-left">
+          <h2 class="index-content-title">Контактная информация</h2>
+          <p>
+            Барбершоп "Бородинский"<br>
+            Адрес: г.Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
+            Телефон: +7 (812) 666-02-66
+          </p>
+          <p>
+            Время работы:<br>
+            пн - пт: с 10:00 до 22:00<br>
+            сб - вс: с 10:00 до 19:00
+          </p>
+          <a class="btn" href="#">Как проехать</a>
+          <a class="btn" href="#">Обратная связь</a>
+        </div>
+        <div class="index-content-right">
+          <h2 class="index-content-title">Записаться</h2>
+          <p>Укажите желаемую дану и время и мы свяжемся с вами для подтверждения брони</p>
+          <form class="apointment-form" action="https://echo.htmlacademy.ru" method="post">
+            <input type="text" name="date" value="" placeholder="Дата">
+            <input type="text" name="time" value="" placeholder="Время">
+            <input type="text" name="name" value="" placeholder="Ваше имя">
+            <input type="tel" name="phone" value="" placeholder="Телефон"> <!-- для телефона такой тип чтоб с mobile  было удобнее!! -->
+            <button class="btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>      
+    </main>
+    <footer class="main-footer">  <!-- фот и футер добрались)) --> 
+      <div class="container">
+        <section class="footer-contacts">
+          Барбершоп "Бородинский"<br>
+          Адрес: г.Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
+          <a href="#">Как нас найти?</a><br>
+          Телефон: +7 (812) 666-02-66          
+        </section>
+        <section class="footer-social">
+          <p>Давайте дружить!</p>
+          <a class="social-btn social-btn-vk" href="#">Вконтакте</a> <!-- !! тут вот так замученно ДВА КЛАССА  ТК social-btn это ОБЩЕЕ ОФОРМЛЕНИЕ КНОПОК АНАЛОГИЧНЫХ, А УЖЕ social-btn-vk именно загрузит нужную кнопочку файл! -->
+          <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
+          <a class="social-btn social-btn-inst" href="#">Инстаграм</a>          
+        </section>
+        <section class="footer-copyright">
+          <p>Разработано:</p>
+          <a class="btn" href="https://htmlacademy.ru">HTML Academy</a>
+        </section>        
+      </div>
+    </footer>
+  </body>
+</html>
