@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Барбершоп "Бородинский"</title>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <header class="main-header">
-      <div class="container">
+  <body class="no_backg_image4body">
+    <header class="main-header no_backg_image4header">
+      <div class="container clearfix">
         <nav class="main-navigation">
            <img src="img/logo-small.png" width="111" height="24" alt=""> <!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! -->
            <ul>
@@ -32,7 +33,7 @@
         </div>        
       </div>
     </header>
-    <main class="container">
+    <main class="container clearfix">
       <div class="item-heading">
         <h1>Средства для ухода</h1>
         <ul class="nav_breadcumbs">
@@ -41,6 +42,7 @@
           <li>Средства для ухода</li>
         </ul>
       </div>
+    <div class="shop-allinfo clearfix">
     <div class="shop-navigation">
      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
      <fieldset>
@@ -62,84 +64,91 @@
       <button type="submit" class="btn">Показать</button>
      </form>       
     </div>
-    <div class="shop-items">
+    <div class="shop-items_n_pages">
+    <div class="shop-items clearfix">
       <div class="shop-items-item">
-        <img src="img/items/3med.jpg" alt="">
-        <div class="item-name">
-          <a href="#">
-            <span class="item-name-type">Набор для путешествий</span><br>
-            <span class="item-name-brand">"Baxter of California"</span>
-          </a>
-        </div>
-        <div class="item-price_buy">
-          <span class="item-price">2 900 РУБ.</span>
-          <a href="#" class="btn item-buy">Купить</a> <!-- Я ТУТ СТАВИЛ БАТТОН НО Я ЗАБЫЛ ЧТО НАДА ФОРМУ ДЛЯ БАТТОНА Ж ЕЩЁ А ТАК ПОЛУЧАЕТСЯ МЕНЬШЕ НАМНОГО КОДА!!! -->
-        </div>        
+        <div class="shop-items-item-details item3">
+          <div class="item-name">
+            <a href="#">
+              <span class="item-name-type">Набор для путешествий</span><br>
+              <span class="item-name-brand">"Baxter of California"</span>
+            </a>
+          </div>
+          <div class="item-price_buy">
+            <span class="item-price">2 900 РУБ.</span>
+            <a href="#" class="btn item-buy">Купить</a><!-- Я ТУТ СТАВИЛ БАТТОН НО Я ЗАБЫЛ ЧТО НАДА ФОРМУ ДЛЯ БАТТОНА Ж ЕЩЁ А ТАК ПОЛУЧАЕТСЯ МЕНЬШЕ НАМНОГО КОДА!!! -->
+          </div>
+        </div>         
       </div>
       <div class="shop-items-item">
-        <img src="img/items/4med.jpg" alt="">
-        <div class="item-name">
-          <a href="#">
-            <span class="item-name-type">Увлажняющий кондиционер</span><br>
-            <span class="item-name-brand">"Baxter of California"</span>
-          </a>
-        </div>
-        <div class="item-price_buy">
-          <span class="item-price">750 РУБ.</span>
-          <a href="#" class="btn item-buy">Купить</a>
-        </div>        
+        <div class="shop-items-item-details item4">
+          <div class="item-name">
+            <a href="#">
+              <span class="item-name-type">Увлажняющий кондиционер</span><br>
+              <span class="item-name-brand">"Baxter of California"</span>
+            </a>
+          </div>
+          <div class="item-price_buy">
+            <span class="item-price">750 РУБ.</span>
+            <a href="#" class="btn item-buy">Купить</a>
+          </div>
+        </div>         
       </div>
       <div class="shop-items-item">
-        <img src="img/items/5med.jpg" alt="">
-        <div class="item-name">
-          <a href="#">
-            <span class="item-name-type">Гель для волос</span><br>
-            <span class="item-name-brand">"Suavecito"</span>
-          </a>
-        </div>
-        <div class="item-price_buy">
-          <span class="item-price">290 РУБ.</span>
-          <a  href="#" class="btn item-buy">Купить</a>
-        </div>        
+        <div class="shop-items-item-details item5">
+          <div class="item-name">
+            <a href="#">
+              <span class="item-name-type">Гель для волос</span><br>
+              <span class="item-name-brand">"Suavecito"</span>
+            </a>
+          </div>
+          <div class="item-price_buy">
+            <span class="item-price">290 РУБ.</span>
+            <a href="#" class="btn item-buy">Купить</a>
+          </div>
+        </div>         
       </div>
       <div class="shop-items-item">
-        <img src="img/items/6med.jpg" alt="">
-        <div class="item-name">
-          <a href="#">
-            <span class="item-name-type">Гель для укладки волос</span><br>
-            <span class="item-name-brand">"American  Crew"</span>
-          </a>
-        </div>
-        <div class="item-price_buy">
-          <span class="item-price">500 РУБ.</span>
-          <a href="#" class="btn item-buy">Купить</a>
-        </div>        
+        <div class="shop-items-item-details item6">
+          <div class="item-name">
+            <a href="#">
+              <span class="item-name-type">Гель для укладки волос</span><br>
+              <span class="item-name-brand">"American  Crew"</span>
+            </a>
+          </div>
+          <div class="item-price_buy">
+            <span class="item-price">500 РУБ.</span>
+            <a href="#" class="btn item-buy">Купить</a>
+          </div>
+        </div>         
       </div>
       <div class="shop-items-item">
-        <img src="img/items/7med.jpg" alt="">
-        <div class="item-name">
-          <a href="#">
-            <span class="item-name-type">Гель для волос</span><br>
-            <span class="item-name-brand">"American  Crew"</span>
-          </a>
-        </div>
-        <div class="item-price_buy">
-          <span class="item-price">300 РУБ.</span>
-          <a href="#" class="btn item-buy">Купить</a>
-        </div>        
+        <div class="shop-items-item-details item7">
+          <div class="item-name">
+            <a href="#">
+              <span class="item-name-type">Гель для волос</span><br>
+              <span class="item-name-brand">"American  Crew"</span>
+            </a>
+          </div>
+          <div class="item-price_buy">
+            <span class="item-price">300 РУБ.</span>
+            <a href="#" class="btn item-buy">Купить</a>
+          </div>
+        </div>         
       </div>
       <div class="shop-items-item">
-        <img src="img/items/8med.jpg" alt="">
-        <div class="item-name">
-          <a href="#">
-            <span class="item-name-type">Набор для бритья</span><br>
-            <span class="item-name-brand">"Baxter of California"</span>
-          </a>
-        </div>
-        <div class="item-price_buy">
-          <span class="item-price">3 900 РУБ.</span>
-          <a href="#" class="btn item-buy">Купить</a>
-        </div>
+        <div class="shop-items-item-details item8">
+          <div class="item-name">
+            <a href="#">
+              <span class="item-name-type">Набор для бритья</span><br>
+              <span class="item-name-brand">"Baxter of California"</span>
+            </a>
+          </div>
+          <div class="item-price_buy">
+            <span class="item-price">3 900 РУБ.</span>
+            <a href="#" class="btn item-buy">Купить</a>
+          </div>
+        </div>         
       </div>
     </div>
      <div class="shop-pages">
@@ -147,10 +156,12 @@
        <a href="#" class="pages-num">2</a>
        <a href="#" class="pages-num">3</a>
        <a href="#" class="pages-num">4</a>
+     </div>
+     </div>
      </div>       
     </main>
     <footer class="main-footer">
-      <div class="container">
+      <div class="container clearfix">
         <section class="footer-contacts">
           Барбершоп "Бородинский"<br>
           Адрес: г.Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
