@@ -1,28 +1,97 @@
-/* Нужно было ли резать картинки товаров imgs/items с разкой-тенью или лучше такой эффект средствами CSS сделать ?? именно речь про 1-3 */
-
 html,
 body {
-   /* min-width: 1122px;
-   min-height: 1750px;   убрал пока эту херню непонятно зачем вообще нужную - страничка прайс из за min-height была длиннее нормы */
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #000000 url("img/barbershop-index-grid.jpg") no-repeat 50% 3px;
-  background-size: 1122px auto;
+   min-width: 960px;
+   /* min-height: 1750px;   убрал пока эту херню непонятно зачем вообще нужную - страничка прайс из за min-height была длиннее нормы */
+  
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: 'PT Sans Narrow', "Arial", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  
+  background: #000000 url("img/background.jpg") no-repeat center top;
 }
 
 .no_backg_image4body {
-  background: white url("img/background-light.png");
+  background: #f8f5f2 url("img/background-light.png");
 }
 
 .main-header {
   margin-bottom: 60px;
+  
+  color: white;
+  
+  background: black;
 }
 
-.no_backg_image4header {
-  background: black;
+.main-navigation a {
+  display: block;
+  padding: 25px 20px;
+  
+  color: white;
+  text-decoration: none;
+}
+
+.main-navigation a:hover {
+  background: #242424;
+}
+
+.main-navigation ul {
+  margin: 0;
+  padding: 0;
+  
+  list-style: none;
+  font-size: 0;
+}
+
+.main-navigation li {
+  display: inline-block;
+  vertical-align: top;
+  
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.user-block {
+  float: right;
+  max-width: 140px;
+  text-align: right;
+}
+
+.login {
+  position: relative;
+  
+  display: inline-block;
+  vertical-align: top;
+  padding: 25px 20px 25px 50px;
+  
+  
+  font-size: 16px;
+  line-height: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.login:hover {
+  background: #242424;
+}
+
+.login::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 20px; 
+  
+  width: 18px;
+  height: 18px;
+  
+  background: transparent url(img/sprite.png) no-repeat;
+  opacity: 0.3;
+}
+
+.login:hover::before {
+  opacity: 1;
 }
 
 .container {
@@ -53,10 +122,14 @@ body {
 
 .index-logo {
   width: 368px;
-  height: 204px;
-  margin-right: auto;
-  margin-left: auto;
+  height: 204px;  /* сделали потому что после img ИДЁТ ПРОБЕЛ чтоб не было пустого места после картинки!! */
+  margin: 0 auto;
   margin-bottom: 25px;
+}
+
+.index-logo img {
+  width: 368px;
+  height: 204px;  
 }
 
 .features {
@@ -67,15 +140,51 @@ body {
   float: left;
   width: 300px;
   margin-right: 20px;
+  text-align: center;
 }
 
 .features-item:last-child {
   margin-right: 0px;
 }
 
+.features-name {
+  position: relative;
+  
+  display: block;
+  margin-bottom: 30px;
+  padding-bottom: 35px; /*сделано для ромбика чтоб он тут был*/
+  
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.features-item p {
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.features-name::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -10px;
+  
+  content: "";
+  
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  transform: rotate(45deg);
+}
+
 .index-content {
   margin-bottom: 35px;
   padding: 50px 80px;
+  
+  color: black;
+  
+  background: url("img/background-light-shadow.png") no-repeat center, #f8f5f2 url("img/background-light.png");
 }
 
 .index-content-left {
@@ -86,6 +195,141 @@ body {
 .index-content-right {
   float: right;
   width: 300px;  
+}
+
+.index-content-title {
+  font-size: 30px;
+  line-height: 42px;
+  
+  margin: 0px;
+  margin-bottom: 25px;
+}
+
+.index-content p {
+  margin: 0px;
+  margin-bottom: 25px;
+  
+}
+
+.news-preview {
+  margin: 0px;
+  padding: 0px;
+  padding-right: 50px; /* интересно что у него было тут 35!! */
+  list-style: none;
+}
+
+.news-preview p {
+  margin-bottom: 0px;
+}
+
+.news-preview li {
+  margin-bottom: 25px;
+}
+
+.news-preview time {
+  text-transform: none;
+  font-weight: normal;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 16px; /* потому что там между кнопками пробелы (инлайн-блок же и не убрать их нормально) а нужно в сумме 16+4 (2 спейса) = 20 */ 
+  padding: 10px 33px;
+  
+  font-weight: 700; /* для элементов форм! от body не наследуются они поэтому нужно прописывать отдельно!! */
+  font-size: 14px;
+  line-height: 24px;
+  font-family: 'PT Sans Narrow', "Arial", sans-serif;
+  vertical-align: top;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  
+  background-color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background: #663d15;
+}
+
+.btn.disabled, /* соверует прописывать хоть нету в стайл гайде! */
+.btn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.btn.disabled:hover,
+.btn:disabled:hover  {
+  background: black;
+}
+
+.gallery {
+  position: relative;
+  
+  height: 260px;
+}
+
+.gallery-content {
+  height: 164px;
+  margin: 0; 
+  
+  background: gray; /* если пикча не загрузится */
+  border: 7px solid white;
+}
+
+.gallery-content img {
+  width: 286px;
+  height: 164px;
+}
+
+.gallery .btn {
+  position: absolute;
+  bottom: 0;
+  
+  width: 140px;
+  margin: 0;
+}
+
+.gallery-prev {
+  left: 0;
+}
+
+.gallery-next {
+  right: 0;
+}
+
+.appointment-form input {
+  float: left;
+  width: 106px; /*можно было проще считать BOX-SIZING заюзать!*/
+  padding: 7px 15px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  
+  font: inherit; /* форма сука текст иначе не видит ТУТ БОЛЕЕ ЧОТКИЙ ВАРИАН ОПИСАН ЧЕМ КОПИПАСТ ТУПОЙ!!! INHERIT!! */
+  color: inherit;
+  text-transform: inherit;
+  
+  background: #f9f6f3;
+  border: 2px solid black;
+  outline: none;
+}
+
+.appointment-form input:nth-child(even) { /*у чотных сбросили право чтоб влазило в строку!!*/
+  margin-right: 0;
+}
+
+.appointment-form .btn {
+  clear: both;
+  width: 100%;
+}
+
+.appointment-form input:hover {
+  border: 2px solid #663d15;
 }
 
 .price-highlight {
@@ -203,6 +447,9 @@ body {
   margin-top: 65px; /* в отличии от верхних блоков где -bottom юзается тут ТОП чтоб отталкивался он от низа типа!! */
   padding-top: 60px;
   padding-bottom: 40px;
+  
+  color: white; /*лучше явно прописать для всего футера!!*/
+  
   background: #242424 url("img/background-footer.png");
 }
 
@@ -212,12 +459,71 @@ body {
   margin-right: 60px;
 }
 
+.footer-contacts a {
+  color: white;
+}
+
+.footer-contacts a:hover {
+  text-decoration: none;
+}
+
 .footer-social {
   float: left;
   width: 180px;
+  
+  text-align: center; 
+}
+
+.footer-social p {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.social-btn {
+  display: inline-block;
+  width: 43px;
+  height: 43px;
+  margin: 0 2px;
+  
+  font-size: 0px;  /*прячем текста с названиями соцсетей!*/
+  vertical-align: top;
+  text-decoration: none;
+  
+  background: black url("img/sprite.png") no-repeat center;
+  
+  transition: /*но у меня не работает ПОТОМУ ЧТО Я МЕНЯЮ ЧЕРЕЗ CSS ЦВЕТА У КНОПОК СОЦСЕТЕЙ!!!*/
+    background-position 0.5s,
+    background-color 0.5s;
+}
+
+.social-btn:hover {
+  -webkit-filter: invert(100%);   /*можно было как учитель предлагал сделать в спрайте отдельные картинки и менять background-position + color!!*/
+}
+
+.social-btn-vk {
+  background-position: 9px -22px;
+}
+
+.social-btn-fb {
+  background-position: 14px -62px;
+}
+
+.social-btn-inst {
+  background-position: 11px -103px;
 }
 
 .footer-copyright {
   float: right;
-  width: 180px;
+  max-width: 180px;
+}
+
+.footer-copyright p {
+  margin-top: 0;
+  margin-bottom: 15px;
+  
+  text-align: center;
+}
+
+.footer-copyright .btn {
+  margin-right: 0;
 }
