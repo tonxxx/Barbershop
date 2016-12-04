@@ -3,14 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Барбершоп "Бородинский"</title>
+    <link rel="stylesheet" href="normalize.css">    
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
   </head>
   <body class="no_backg_image4body">
     <header class="main-header">
       <div class="container clearfix">
-        <nav class="main-navigation">
-           <img src="img/logo-small.png" width="111" height="24" alt=""> <!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! -->
-           <ul>
+        <nav class="main-navigation other_pages">           
+          <ul>  
+            <li>
+              <a href="#">Barbershop</a><!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! ????????????? HOW TO USE IMG HERE ????????????????? НЕ МОГУ ДОБИТЬСЯ ЧТОБ ВСТАЛО ПО ЦЕНТРУ И РАБОТАЛА ПОДСВеТКА ВОКРУГ!!! -->         
+            </li>
             <li>
               <a href="#">Информация</a>
             </li>
@@ -21,7 +25,7 @@
               <a href="#">Прайс-лист</a>
             </li>
             <li>
-              <a href="#">Магазин</a>
+              <a href="#" class="current_page">Магазин</a>
             </li>
             <li>
               <a href="#">Контакты</a>
@@ -33,7 +37,8 @@
         </div>        
       </div>
     </header>
-    <main class="container clearfix">
+    <main class="background-lite clearfix">
+      <div class="container">
       <div class="item-heading">
         <h1>Средства для ухода</h1>
         <ul class="nav_breadcumbs">
@@ -47,19 +52,18 @@
      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
      <fieldset>
        <legend>Производители:</legend> <!-- ТАК КОРРЕКТНЕЙ ЧЕМ H2!!!! -->
-        <input type="checkbox" name="manufacturer1" id="baxter" checked>Baxter of California <!-- LABEL ЛУЧШЕ Б ЗАЮЗАТЬ!! -->
-        <input type="checkbox" name="manufacturer2" id="natty">Mr.Natty
-        <input type="checkbox" name="manufacturer3" id="suave" checked>Suavecito
-        <input type="checkbox" name="manufacturer4" id="malin">Malin+Goetz
-        <input type="checkbox" name="manufacturer5" id="murr">Murray's
-        <input type="checkbox" name="manufacturer6" id="amcrew" checked>American Crew
+        <input type="checkbox" name="manufacturer1" id="baxter" checked><label class="label-checkbox" for="baxter">Baxter of California<div class="checkbox-custom"></div></label><!-- LABEL ЛУЧШЕ Б ЗАЮЗАТЬ!! -->
+        <input type="checkbox" name="manufacturer2" id="natty"><label class="label-checkbox" for="natty">Mr.Natty<div class="checkbox-custom"></div></label>
+        <input type="checkbox" name="manufacturer3" id="suave" checked><label class="label-checkbox" for="suave">Suavecito<div class="checkbox-custom"></div></label>
+        <input type="checkbox" name="manufacturer4" id="malin"><label class="label-checkbox" for="malin">Malin+Goetz<div class="checkbox-custom"></div></label>
+        <input type="checkbox" name="manufacturer5" id="murr"><label class="label-checkbox" for="murr">Murray's<div class="checkbox-custom"></div></label>
+        <input type="checkbox" name="manufacturer6" id="amcrew" checked><label class="label-checkbox" for="amcrew">American Crew<div class="checkbox-custom"></div></label>
      </fieldset>
      <fieldset>
-       <legend>Группы товаров:
-         <input type="radio" name="group" id="shaving">Бритвенные принадлежности
-         <input type="radio" name="group" id="care" checked>Средства для ухода
-         <input type="radio" name="group" id="accessories">Аксессуары
-       </legend>
+       <legend>Группы товаров:</legend>
+         <input type="radio" name="group" id="shaving"><label class="label-radio" for="shaving">Бритвенные принадлежности</label>
+         <input type="radio" name="group" id="care" checked><label class="label-radio" for="care">Средства для ухода</label>
+         <input type="radio" name="group" id="accessories"><label class="label-radio" for="accessories">Аксессуары</label>
       </fieldset>
       <button type="submit" class="btn">Показать</button>
      </form>       
@@ -67,7 +71,9 @@
     <div class="shop-items_n_pages">
     <div class="shop-items clearfix">
       <div class="shop-items-item">
-        <div class="shop-items-item-details item3">
+          <div class="item-pic">
+            <img src="img/items/3med.jpg" width="220" height="165" alt="">
+          </div>
           <div class="item-name">
             <a href="#">
               <span class="item-name-type">Набор для путешествий</span><br>
@@ -79,9 +85,10 @@
             <a href="#" class="btn item-buy">Купить</a><!-- Я ТУТ СТАВИЛ БАТТОН НО Я ЗАБЫЛ ЧТО НАДА ФОРМУ ДЛЯ БАТТОНА Ж ЕЩЁ А ТАК ПОЛУЧАЕТСЯ МЕНЬШЕ НАМНОГО КОДА!!! -->
           </div>
         </div>         
-      </div>
       <div class="shop-items-item">
-        <div class="shop-items-item-details item4">
+          <div class="item-pic">
+            <img src="img/items/4med.jpg" width="220" height="165" alt="">
+          </div>          
           <div class="item-name">
             <a href="#">
               <span class="item-name-type">Увлажняющий кондиционер</span><br>
@@ -92,10 +99,11 @@
             <span class="item-price">750 РУБ.</span>
             <a href="#" class="btn item-buy">Купить</a>
           </div>
-        </div>         
       </div>
       <div class="shop-items-item">
-        <div class="shop-items-item-details item5">
+          <div class="item-pic">
+            <img src="img/items/5med.jpg" width="220" height="165" alt="">
+          </div>         
           <div class="item-name">
             <a href="#">
               <span class="item-name-type">Гель для волос</span><br>
@@ -105,11 +113,12 @@
           <div class="item-price_buy">
             <span class="item-price">290 РУБ.</span>
             <a href="#" class="btn item-buy">Купить</a>
-          </div>
-        </div>         
+          </div>        
       </div>
       <div class="shop-items-item">
-        <div class="shop-items-item-details item6">
+          <div class="item-pic">
+            <img src="img/items/6med.jpg" width="220" height="165" alt="">
+          </div>         
           <div class="item-name">
             <a href="#">
               <span class="item-name-type">Гель для укладки волос</span><br>
@@ -119,11 +128,12 @@
           <div class="item-price_buy">
             <span class="item-price">500 РУБ.</span>
             <a href="#" class="btn item-buy">Купить</a>
-          </div>
-        </div>         
+          </div>      
       </div>
       <div class="shop-items-item">
-        <div class="shop-items-item-details item7">
+          <div class="item-pic">
+            <img src="img/items/7med.jpg" width="220" height="165" alt="">
+          </div>         
           <div class="item-name">
             <a href="#">
               <span class="item-name-type">Гель для волос</span><br>
@@ -133,11 +143,12 @@
           <div class="item-price_buy">
             <span class="item-price">300 РУБ.</span>
             <a href="#" class="btn item-buy">Купить</a>
-          </div>
-        </div>         
+          </div>        
       </div>
       <div class="shop-items-item">
-        <div class="shop-items-item-details item8">
+          <div class="item-pic">
+            <img src="img/items/8med.jpg" width="220" height="165" alt="">
+          </div>         
           <div class="item-name">
             <a href="#">
               <span class="item-name-type">Набор для бритья</span><br>
@@ -147,18 +158,18 @@
           <div class="item-price_buy">
             <span class="item-price">3 900 РУБ.</span>
             <a href="#" class="btn item-buy">Купить</a>
-          </div>
-        </div>         
+          </div>   
       </div>
     </div>
      <div class="shop-pages">
        <a href="#" class="pages-num">1</a>
-       <a href="#" class="pages-num">2</a>
+       <a href="#" class="pages-num current_pagenum">2</a>
        <a href="#" class="pages-num">3</a>
        <a href="#" class="pages-num">4</a>
      </div>
      </div>
-     </div>       
+     </div>
+    </div>       
     </main>
     <footer class="main-footer">
       <div class="container clearfix">

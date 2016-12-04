@@ -3,14 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Барбершоп "Бородинский"</title>
+    <link rel="stylesheet" href="normalize.css">    
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
   </head>
   <body class="no_backg_image4body">
     <header class="main-header">
       <div class="container clearfix">
-        <nav class="main-navigation">
-          <img src="img/logo-small.png" width="111" height="24" alt=""> <!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! -->
-          <ul>
+        <nav class="main-navigation other_pages">           
+          <ul>  
+            <li>
+              <a href="#">Barbershop</a><!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! ????????????? HOW TO USE IMG HERE ????????????????? НЕ МОГУ ДОБИТЬСЯ ЧТОБ ВСТАЛО ПО ЦЕНТРУ И РАБОТАЛА ПОДСВеТКА ВОКРУГ!!! -->         
+            </li>
             <li>
               <a href="#">Информация</a>
             </li>
@@ -21,7 +25,7 @@
               <a href="#">Прайс-лист</a>
             </li>
             <li>
-              <a href="#">Магазин</a>
+              <a href="#" class="current_page">Магазин</a>
             </li>
             <li>
               <a href="#">Контакты</a>
@@ -53,11 +57,17 @@
           <img src="img/items/3small.jpg" width="140" height="149" alt="">
         </div>
         <div class="item-details">
-          <span class="item-stock">Есть в наличии</span>
-          <span class="item-code">Артикул: Dexter-AE</span>
-          <p>Travel Kit - необходимый аксессуар во время любого путешествия. В аккуратной кожаной сумке находится все, что нужно для бритья и ухода за кожей во время рабочей поездки или отдыха: средство для умывания, увлажняющий крем, крем для бритья, крем после бритья, шампунь. Набор также может стать отличным подарком.</p>  <!-- это можно И ЛУЧШЕ ПОЖАЛУЙ было SECTION сделать ещё! ТУТ МОЖЕТ БЫТЬ НЕ 1 АБЗАЦ +++ СМЫСЛОВОЙ РАЗДЕЛ!!!! -->
-          <span class="item-price">2 900 РУБ.</span>
-          <button class="btn item-buy">Купить</button>
+          <div class="clearfix">
+            <span class="item-stock">Есть в наличии</span>
+            <span class="item-code">Артикул: Dexter-AE</span>
+          </div>
+          <section class="item-desc">
+            <p>Travel Kit - необходимый аксессуар во время любого путешествия. В аккуратной кожаной сумке находится все, что нужно для бритья и ухода за кожей во время рабочей поездки или отдыха: средство для умывания, увлажняющий крем, крем для бритья, крем после бритья, шампунь. Набор также может стать отличным подарком.</p>  <!-- это можно И ЛУЧШЕ ПОЖАЛУЙ было SECTION сделать ещё! ТУТ МОЖЕТ БЫТЬ НЕ 1 АБЗАЦ +++ СМЫСЛОВОЙ РАЗДЕЛ!!!! -->
+          </section>
+          <div class="price_buy">
+            <span class="item-price">2 900 РУБ.</span>
+            <button class="btn item-buy">Купить</button>
+          </div>
           <h2>В набор входят:</h2>
           <ul>
             <li>Средство для умывания (50 мл)</li>

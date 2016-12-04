@@ -13,12 +13,24 @@ body {
   background: #000000 url("img/background.jpg") no-repeat center top;
 }
 
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+
+
 .no_backg_image4body {
   background: #f8f5f2 url("img/background-light.png");
 }
 
 .main-header {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   
   color: white;
   
@@ -27,15 +39,40 @@ body {
 
 .main-navigation a {
   display: block;
+  position: relative;
   padding: 25px 20px;
   
   color: white;
   text-decoration: none;
 }
 
+
+
 .main-navigation a:hover {
   background: #242424;
 }
+
+.main-navigation .current_page:hover {
+  background: black;
+}
+
+.main-navigation li:first-of-type a:hover {  /*вот тут я реально долго тупил чото что нада было К ССЫЛКЕ В ПЕРВОЙ LI привязаться*/
+  background: url("img/logo-small.png") no-repeat center, #242424;
+}
+
+.main-navigation .current_page::after { /*ВОТ ТУТ Я НЕ СРАЗУ СООБРАЗИЛ ЧТО НАДА ЗАЮЗАТЬ ЦЕНТРОВКУ ТИПА ЧЕРЕЗ СРАЗУ УКАЗАТЬ И ЛЕФТ И РАЙТ!!! зная паддинги! тогда будет ровно КАК ТЕКСТ ПО ШИРИНЕ!!!!*/
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  right: 20px;
+  
+  content: "";
+  
+  display: block;
+  height: 3px;
+  background: white;
+}
+
 
 .main-navigation ul {
   margin: 0;
@@ -51,6 +88,15 @@ body {
   
   font-size: 16px;
   line-height: 20px;
+}
+
+.other_pages li:first-of-type {
+  width: 151px;
+  
+  font-size: 0px;
+  line-height: 20px;
+  
+  background: url("img/logo-small.png") no-repeat center;
 }
 
 .user-block {
@@ -102,6 +148,7 @@ body {
 
 .background-lite {
   width: 100%;
+  color: black;
 }
 
 .clearfix::after {
@@ -332,22 +379,7 @@ body {
   border: 2px solid #663d15;
 }
 
-.price-highlight {
-}
 
-.price-highlightsblock {
-  font-size: 0px;
-  
-}
-
-.price-quarterblock {
-  font-size: 16px;
-  vertical-align: text-bottom;  
-  display: inline-block;
-  width: 470px;
-  margin-top: 60px;
-  
-}
 
 .item-gallery,
 .item-details {
@@ -368,6 +400,7 @@ body {
 
 .item-gallery img {
   margin: 10px;
+  box-shadow: 0px 0px 10px 5px #d4d2d0;
 }
 
 .item-gallery img:first-of-type {
@@ -384,7 +417,238 @@ body {
 }
 
 .item-heading {
+  margin-bottom: 50px;
+}
+
+
+.search-form fieldset {
+  padding-left: 0px;
+  border: none;
+}
+
+.search-form legend {
+  margin-bottom: 25px;
+  font-size: 24px;  
+}
+
+.label-checkbox {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 45px;
+  
+  line-height: 20px;
+}
+
+.label-checkbox:last-of-type {
+  margin-bottom: 50px;
+}
+
+.search-form input[type=checkbox] {
+  display: none;
+}
+
+.checkbox-custom { /*ТУТ НУЖЕН ЛЕВЫЙ СЛОЙ DIV ПУСТОЙ ПОТОМУ ЧТО ЧТОБ КРЕСТИК ВНУТРИ РИСОВАТЬ НУЖНО 2 СЛОЯ (ЮЗАЕМ ПСЕВДОЭЛЕМЕНТЫ ОБА И BEFORE / AFTER!!!) ИТОГО БЕЗ ЭТОГО НЕ ВЛЕЗЕТ!!!*/
+  position: absolute;
+  left: -45px;
+  top: -2px;
+  
+  content: "";
+  
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+}
+
+
+
+.search-form input[type="checkbox"]:not([disabled]):checked + .label-checkbox::after,
+.search-form input[type="checkbox"]:not([disabled]):checked + .label-checkbox::before {
+  position: absolute;
+  top: 8px;
+  left: -43px;
+  
+  content: "";
+  
+  display: block;  
+  width: 20px;
+  height: 2px;
+  background: black;
+  transform: rotate(45deg); /*ВАЩЕ МОЖНО БЫЛО NOT-DISABLED НЕ ПРОПИСЫВАТЬ ТУТ ТАК КАК НИЖЕ ДЛЯ ДИСЭЙБЛЕДОВ РАССМОТРИМ СТИЛИ, НО ТУТ ОСТАВИЛ КАК ПРИМЕР!!!!*/
+}
+
+.search-form input[type="checkbox"]:not([disabled]):checked + .label-checkbox::before {
+  transform: rotate(-45deg); 
+}
+
+.search-form input[type="checkbox"]:not([disabled]) + .label-checkbox:hover {
+  color: #663d15;
+  cursor: pointer;
+}
+
+
+.search-form input[type="checkbox"]:disabled + .label-checkbox {
+  color: #adaba9;
+}
+
+
+.search-form input[type="checkbox"]:disabled:checked + .label-checkbox .checkbox-custom {
+  border-color: #adaba9;
+}
+
+.search-form input[type="checkbox"]:disabled:checked + .label-checkbox::after,
+.search-form input[type="checkbox"]:disabled:checked + .label-checkbox::before {
+  position: absolute;
+  top: 10px;
+  left: -43px;
+  
+  content: "";
+  
+  display: block;  
+  width: 20px;
+  height: 2px;
+  background: #adaba9;
+  transform: rotate(45deg);
+}
+
+.search-form input[type="checkbox"]:disabled:checked + .label-checkbox::after {
+  transform: rotate(-45deg);
+}
+
+.label-radio {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 45px;
+  
+  line-height: 20px;
+}
+
+.label-radio:last-of-type {
+  margin-bottom: 50px;
+}
+
+.search-form input[type=radio] {
+  display: none;  
+}
+
+.label-radio::before {  /*ТУТ НЕ НУЖЕН DIV ПУСТОЙ ПОТОМУ ЧТО СИСЬКУ ПОСТАВИТЬ В ЦЕНТР ХВАТИТ 1ГО СЛОЯ!!!*/
+  position: absolute;
+  top: -2px;
+  left: -45px;
+  
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  border: 2px solid black;
+  
+  content: "";
+}
+
+.search-form input[type=radio]:disabled + .label-radio,
+.search-form input[type=radio]:disabled + .label-radio::before {
+  color: #adaba9;
+  border-color: #adaba9;
+}
+
+.search-form input[type=radio]:checked + .label-radio::after {
+  position: absolute;
+  top: 6px;
+  left: -37px;
+  
+  content: "";
+  
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background: black;
+}
+
+
+.search-form input[type=radio]:disabled:checked + .label-radio,
+.search-form input[type=radio]:disabled:checked + .label-radio::before {
+  color: #adaba9;
+  border-color: #adaba9;
+}
+
+.search-form input[type=radio]:disabled:checked + .label-radio::after {
+  border-color: #adaba9;
+  background: #adaba9;  
+}
+
+.label-radio:hover {
+  color: #663d15;
+  cursor: pointer;  
+}
+
+.search-form btn {
+  margin-left: 0px;
+}
+
+.item-stock {
+  display: block;
+  float: left;
+  margin: 10px 0px 20px;
+}
+
+.item-code {
+  display: block;
+  float: right;
+  margin: 10px 0px 20px;
+  
+  color: #aba9a7;
+}
+
+.item-desc {
+  margin-bottom: 40px;
+}
+
+.price_buy {
   margin-bottom: 60px;
+  font-size: 0;
+}
+
+.item-price {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 30px;
+  background: #e5e5e5;
+  min-width: 55px;
+  
+  font-size: 14px;
+}
+
+.item-buy {
+  padding: 10px 15px;  
+}
+
+.item-details ul {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.item-details ul li {
+  position: relative;
+  margin-left: 20px;
+}
+
+.item-details ul li::before {
+  position: absolute;
+  top: 8px;
+  left: -17px;
+  
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: black;
+  transform: rotate(45deg);
+  content: "";
 }
 
 
@@ -403,44 +667,224 @@ body {
 }
 
 .shop-items-item {
+  position: relative;
   float: left;
   width: 220px;
-}
-
-.shop-items-item-details {
+  min-height: 290px;
   margin: 10px;
-  height: 290px;
+  
+  background: white;
+  box-shadow: 0px 0px 10px 5px #d4d2d0;
 }
 
-.item3 {
-  margin-top: 0px;
-  background: white url("img/items/3med.jpg") no-repeat;
+.shop-items-item:nth-child(3),
+.shop-items-item:nth-child(6) {
+  margin-right: 0px;
 }
 
-.item4 {
-  margin-top: 0px;
-  background: white url("img/items/4med.jpg") no-repeat;
+.item-pic {
+  max-height: 165px;
 }
 
-.item5 {
-  margin-top: 0px;
-  background: white url("img/items/5med.jpg") no-repeat;
+.item-name {
+  margin: 10px 15px ;
 }
 
-.item6 {
-  margin-top: 0px;
-  background: white url("img/items/6med.jpg") no-repeat;
+.item-name a {
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
 }
 
-.item7 {
-  margin-top: 0px;
-  background: white url("img/items/7med.jpg") no-repeat;
+.item-name-type {
+  text-transform: none;
 }
 
-.item8 {
-  margin-top: 0px;
-  background: white url("img/items/8med.jpg") no-repeat;
+.item-price_buy {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  font-size: 0;
 }
+
+.item-price_buy .btn {
+  margin-right: 0px;
+}
+
+/*ИНТЕРЕСНО А КАК ОНИ СДЕЛАЛИ ТУТ??? Я СНАЧАЛА СДЕЛАЛ под кнопку купить бэкграунд чорный до конца... НО ПОЛУЧАЕТСЯ НА МАКЕТЕ НЕ ТАК!!! ПЕРЕДЕЛАЛ ЧЕРЕЗ MIN-WIDTH У СЕРОЙ КНОПКИ!!*/
+
+
+
+.shop-pages {
+  padding: 10px;
+  font-size: 0;
+}
+
+.pages-num {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 0;
+  background: black;
+  
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.pages-num:hover,
+.pages-num:active {
+  background: #663d15;
+}
+
+.current_pagenum {
+  color: black;
+  background: white;
+}
+
+.current_pagenum:hover,
+.current_pagenum:active {
+  background: white;
+}
+
+
+.nav_breadcumbs {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  
+  list-style: none;
+  font-size: 0;  
+}
+
+.nav_breadcumbs li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px;
+  
+  font-size: 14px;
+}
+
+.nav_breadcumbs li::after {
+  position: absolute;
+  top: 8px;
+  left: 100%;
+  margin-left: 15px;
+  
+  content: "";
+  
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: black;
+  transform: rotate(45deg);
+}
+
+.nav_breadcumbs li:last-of-type {
+  margin-right: 0;
+  color: #aba9a7;
+}
+
+.nav_breadcumbs li:last-of-type::after {
+  display: none;
+}
+
+.price-highlight {
+  display: block;
+  position: relative;
+  z-index: 1;
+  
+  font-size: 48px;
+  line-height: 68px;
+  text-align: center;
+}
+
+.price-highlight span {
+  background: #f8f5f2 url("img/background-light.png");
+  padding: 0 26px;
+}
+
+.price-highlight::before {
+  position: absolute; 
+  top: 50%; left: 0; right: 0; bottom: 0; /*ИНТЕРЕСНО ЧТО ЕСЛИ ЛЕФТ-РАЙТ ЕТЦ НЕ ПРОПИСАТЬ ТО НЕ БУДЕТ БЕЗ КОНТЕНТА РАМКИ!!!*/
+  z-index: -1;
+
+  border-top: 2px solid black;  
+  content:"";
+}
+
+.price-highlightsblock {
+  font-size: 0px;
+  line-height: 0px;   /*БЛЯТЬ!!! оказалось что LINE HEIGHT у BODY делал тут отступы по горизонтали между элементами!!!*/
+  
+}
+
+.price-quarterblock {
+  display: inline-block;  
+  vertical-align: text-bottom;  
+  width: 380px;
+  margin-top: 30px;
+  margin-right: 100px;
+
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.price-quarterblock:nth-child(even) {
+  margin-right: 0;
+}
+
+.price-quarterblock:nth-child(2) {
+  width: 460px;
+}
+
+.price-quarterblock ul {
+  margin-top: 30px;
+  margin-left: 20px;
+  padding: 0;
+  
+  list-style: none;
+}
+
+.price-quarterblock ul li {
+  position: relative;
+  margin-top: 15px;
+}
+
+.price-quarterblock ul li::before {
+  position: absolute;
+  top: 8px;
+  left: -20px;
+  
+  content: "";
+  
+  display: block;
+  width: 7px;
+  height: 7px; 
+  background: black;
+  transform: rotate(45deg);
+}
+
+.price-quarterblock table, th, td {
+  border: 2px solid black;
+}
+
+.price-quarterblock table {
+  border-collapse: collapse;
+  margin-top: 40px;
+  
+  width: 100%;
+}
+
+.price-quarterblock td {
+  width: 50%;
+  padding: 10px 20px;
+}
+
+.price-quarterblock td:nth-child(even) {
+  text-align: center;
+}
+
 
 
 .main-footer {
