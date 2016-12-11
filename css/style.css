@@ -10,36 +10,49 @@ body {
   color: #ffffff;
   text-transform: uppercase;
   
-  background: #000000 url("img/background.jpg") no-repeat center top;
+  background: #000000 url("../img/background.jpg") no-repeat center top;
 }
 
-h1 {
+.innerpage {
+  background: #f8f5f2 url("../img/background-light.png");
+  color: black;
+}
+
+h1 {     /*ОНИ ТИПА НЕ РЕКОМЕНДУЮТ ТАК ДЕЛАТЬ... СНАЧАЛА ЕЩЁ КЛАСС ТИПА .INNER-PAGE H2 НО ПОМОЕМУ ХЕРНЯ ВСЮДУ Ж ЕСТЬ И ОДИНАКОВЫЕ ТАЙТЛЫ*/
   font-size: 30px;
-  line-height: 36px;
+  line-height: 42px;
 }
 
-h2 {
+h2 {     /*ОНИ ТИПА НЕ РЕКОМЕНДУЮТ ТАК ДЕЛАТЬ... СНАЧАЛА ЕЩЁ КЛАСС ТИПА .INNER-PAGE H2 НО ПОМОЕМУ ХЕРНЯ ВСЮДУ Ж ЕСТЬ И ОДИНАКОВЫЕ ТАЙТЛЫ*/
   font-size: 24px;
   line-height: 28px;
 }
 
-
-
-.no_backg_image4body {
-  background: #f8f5f2 url("img/background-light.png");
+.inner-page-title h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
+
+
+
 .main-header {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   
-  color: white;
+  color: white;  /*ХОТЯ КАЗАЛОСЬ НА ИНДЕКСЕ ЧТО ЭТО НЕ ОБЯЗАТЕЛЬНО НО ПО ФАКТУ ТАК ПРОЩЕ БУДЕТ ЕСЛИ НАДА МЕНЯТЬ ЦВЕТ BODY КАК НАПРИМЕР ТУТ */
   
   background: black;
 }
 
+
+.innerpage .main-header {
+  margin-bottom: 55px; /*я это не заметил*/
+}
+
+
 .main-navigation a {
   display: block;
-  position: relative;
   padding: 25px 20px;
   
   color: white;
@@ -52,12 +65,8 @@ h2 {
   background: #242424;
 }
 
-.main-navigation .current_page:hover {
+.main-navigation .current_page a:hover {
   background: black;
-}
-
-.main-navigation li:first-of-type a:hover {  /*вот тут я реально долго тупил чото что нада было К ССЫЛКЕ В ПЕРВОЙ LI привязаться*/
-  background: url("img/logo-small.png") no-repeat center, #242424;
 }
 
 .main-navigation .current_page::after { /*ВОТ ТУТ Я НЕ СРАЗУ СООБРАЗИЛ ЧТО НАДА ЗАЮЗАТЬ ЦЕНТРОВКУ ТИПА ЧЕРЕЗ СРАЗУ УКАЗАТЬ И ЛЕФТ И РАЙТ!!! зная паддинги! тогда будет ровно КАК ТЕКСТ ПО ШИРИНЕ!!!!*/
@@ -74,6 +83,7 @@ h2 {
 }
 
 
+
 .main-navigation ul {
   margin: 0;
   padding: 0;
@@ -84,20 +94,26 @@ h2 {
 
 .main-navigation li {
   display: inline-block;
+  position: relative;
   vertical-align: top;
   
   font-size: 16px;
   line-height: 20px;
 }
 
-.other_pages li:first-of-type {
-  width: 151px;
-  
-  font-size: 0px;
-  line-height: 20px;
-  
-  background: url("img/logo-small.png") no-repeat center;
+
+
+.main-navigation .logo-inner {
+  float: left;
+  width: 111px;
+  height: 20px;
+  padding-top: 22px;
 }
+
+.main-navigation .logo-inner:hover {
+  background: none;
+}
+
 
 .user-block {
   float: right;
@@ -132,7 +148,7 @@ h2 {
   width: 18px;
   height: 18px;
   
-  background: transparent url(img/sprite.png) no-repeat;
+  background: transparent url("../img/sprite.png") no-repeat -20px 0px;
   opacity: 0.3;
 }
 
@@ -146,10 +162,6 @@ h2 {
   padding: 0 10px; /*для того ставим 10 чтоб не прилипало меню если чо к краю экрана! */  
 }
 
-.background-lite {
-  width: 100%;
-  color: black;
-}
 
 .clearfix::after {
   content: "";
@@ -231,7 +243,7 @@ h2 {
   
   color: black;
   
-  background: url("img/background-light-shadow.png") no-repeat center, #f8f5f2 url("img/background-light.png");
+  background: url("../img/background-light-shadow.png") no-repeat center, #f8f5f2 url("../img/background-light.png");
 }
 
 .index-content-left {
@@ -400,7 +412,8 @@ h2 {
 
 .item-gallery img {
   margin: 10px;
-  box-shadow: 0px 0px 10px 5px #d4d2d0;
+  /*box-shadow: 0px 0px 10px 5px #d4d2d0;*/
+  filter: drop-shadow(0px 0px 7px #7f7e7e)
 }
 
 .item-gallery img:first-of-type {
@@ -674,7 +687,7 @@ h2 {
   margin: 10px;
   
   background: white;
-  box-shadow: 0px 0px 10px 5px #d4d2d0;
+  filter: drop-shadow(0px 0px 7px #7f7e7e);
 }
 
 .shop-items-item:nth-child(3),
@@ -723,6 +736,7 @@ h2 {
 .pages-num {
   display: inline-block;
   padding: 10px 20px;
+  margin-right: 7px;
   border: 0;
   background: black;
   
@@ -756,20 +770,28 @@ h2 {
   font-size: 0;  
 }
 
+.nav_breadcumbs a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav_breadcumbs a:hover {
+  text-decoration: underline;
+}
+
 .nav_breadcumbs li {
   position: relative;
-  display: inline-block;
+  display: inline-block;  /*можно было просто ИНЛАЙН сделать тут же не нада ВЕРТИК МАРГИНЫ-ПАДДЫ ТАК ЧТО!!*/
   vertical-align: top;
   margin-right: 40px;
   
   font-size: 14px;
 }
 
-.nav_breadcumbs li::after {
+.nav_breadcumbs li::before {
   position: absolute;
   top: 8px;
-  left: 100%;
-  margin-left: 15px;
+  left: -24px;
   
   content: "";
   
@@ -785,76 +807,120 @@ h2 {
   color: #aba9a7;
 }
 
-.nav_breadcumbs li:last-of-type::after {
+.nav_breadcumbs li:first-of-type::before {
   display: none;
 }
 
-.price-highlight {
-  display: block;
+.inner-content h2 {   /*ВОТ СНАЧАЛА ОН ДЕЛАЕТ ДЛЯ ВСЕХ СРАЗУ ТУТ ВНУТРЕННИХ ТИПА*/
+  margin-top: 60px;
+  margin-bottom: 30px;
+  
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.inner-content p {
+  margin: 14px 0;
+}
+
+.inner-content table {
+  border-collapse: collapse;  
+}
+
+.inner-content td {     /*ТАК РЕАЛЬНО УДАЧНЕЕ ПОТОМУ ЧТО ТАБЛИЧКА ТО МОЖЕТ БЫТЬ И В ДРУГИХ ТЭГАХ ВЛОЖЕННА А Я СНАЧАЛА СДЕЛАЛ ЧТО ТОЛЬКО В QUARTRBLOCK ЗАДАЁТСЯ СТИЛЬ ТАБЛИЧКИ!!!ы*/
+  padding: 10px 15px;
+  
+  border: 2px solid black;
+}
+
+.big-heading {
+  margin-top: 55px;
+  margin-bottom: 65px;
   position: relative;
   z-index: 1;
-  
-  font-size: 48px;
-  line-height: 68px;
   text-align: center;
 }
 
-.price-highlight span {
-  background: #f8f5f2 url("img/background-light.png");
+.big-heading h2 {
+  display: inline; /*у меня кстати со спанами этого не нада было!!*/
+  margin: 0; /*у меня кстати со спанами этого не нада было!!*/
   padding: 0 26px;
+  background: #f8f5f2 url("../img/background-light.png");
+  
+  font-size: 48px;
+  line-height: 68px;
 }
 
-.price-highlight::before {
-  position: absolute; 
-  top: 50%; left: 0; right: 0; bottom: 0; /*ИНТЕРЕСНО ЧТО ЕСЛИ ЛЕФТ-РАЙТ ЕТЦ НЕ ПРОПИСАТЬ ТО НЕ БУДЕТ БЕЗ КОНТЕНТА РАМКИ!!!*/
+.big-heading::before {
+  position: relative; 
+  top: 34px; /*ТУТ ИМЕННО НУЖНО RELATIVE ЮЗАТЬ Я ДЕЛАЛ ЧЕРЕЗ АБСОЛЮТ УКАЗЫВАЯ ВСЕ КООРДИНАТЫ НО ГОВОРЯТ ТАК БУДЕТ СЛОЖНО СДЕЛАТЬ РЕЗИНУ ПОТОМ!!!!!!!!!!!!!!!!!!!!!! */
   z-index: -1;
 
+  display: block; 
   border-top: 2px solid black;  
   content:"";
 }
 
+/*  ОСТАВИЛ КАК ПРИМЕР КАК Я МУТИЛ С БЛОКАМИ!!!!
 .price-highlightsblock {
   font-size: 0px;
-  line-height: 0px;   /*БЛЯТЬ!!! оказалось что LINE HEIGHT у BODY делал тут отступы по горизонтали между элементами!!!*/
-  
+  line-height: 0px;   БЛЯТЬ!!! оказалось что LINE HEIGHT у BODY делал тут отступы по горизонтали между элементами!!!  
+}
+*/
+
+.inner-columns {
+  margin: 60px 0 0; /*добавил ещё 0 чтоб не уползад вниз сильно футер!!!*/
 }
 
-.price-quarterblock {
-  display: inline-block;  
-  vertical-align: text-bottom;  
-  width: 380px;
-  margin-top: 30px;
-  margin-right: 100px;
-
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.price-quarterblock:nth-child(even) {
-  margin-right: 0;
-}
-
-.price-quarterblock:nth-child(2) {
+.inner-column-left,
+.inner-column-right {
   width: 460px;
 }
 
-.price-quarterblock ul {
-  margin-top: 30px;
-  margin-left: 20px;
+.inner-column-left {
+  float: left;
+}
+
+.inner-column-right {
+  float: right;
+}
+
+.inner-columns .short_text {
+  padding-right: 80px;
+}
+
+
+
+/*ИНТЕРЕСНАЯ ТЕМА КАК УБРАТЬ ОТСТУПА ОТ ПЕРВЫХ И ПОСЛЕДНИХ ЭЛЕМЕНТОВ!!!*/
+
+.inner-column-left *:first-child, 
+.inner-column-right *:first-child {
+  margin-top: 0;
+}
+
+.inner-column-left *:last-child, 
+.inner-column-right *:last-child {
+  margin-bottom: 0;
+}
+
+
+.custom_list1 {
+  margin: 14px 0;
   padding: 0;
   
   list-style: none;
 }
 
-.price-quarterblock ul li {
+.custom_list1 li {
   position: relative;
-  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 20px;
 }
 
-.price-quarterblock ul li::before {
+.custom_list1 li::before {
   position: absolute;
   top: 8px;
-  left: -20px;
+  left: 0;
   
   content: "";
   
@@ -865,25 +931,21 @@ h2 {
   transform: rotate(45deg);
 }
 
-.price-quarterblock table, th, td {
-  border: 2px solid black;
-}
 
-.price-quarterblock table {
-  border-collapse: collapse;
-  margin-top: 40px;
-  
+.prices-table {  
   width: 100%;
 }
 
-.price-quarterblock td {
+.prices-table td {
   width: 50%;
-  padding: 10px 20px;
 }
 
-.price-quarterblock td:nth-child(even) {
+.prices-table td:nth-child(even) {
   text-align: center;
 }
+
+
+
 
 
 
@@ -894,7 +956,7 @@ h2 {
   
   color: white; /*лучше явно прописать для всего футера!!*/
   
-  background: #242424 url("img/background-footer.png");
+  background: #242424 url("../img/background-footer.png");
 }
 
 .footer-contacts {
@@ -933,7 +995,7 @@ h2 {
   vertical-align: top;
   text-decoration: none;
   
-  background: black url("img/sprite.png") no-repeat center;
+  background: black url("../img/sprite.png") no-repeat center;
   
   transition: /*но у меня не работает ПОТОМУ ЧТО Я МЕНЯЮ ЧЕРЕЗ CSS ЦВЕТА У КНОПОК СОЦСЕТЕЙ!!!*/
     background-position 0.5s,
@@ -945,15 +1007,15 @@ h2 {
 }
 
 .social-btn-vk {
-  background-position: 9px -22px;
+  background-position: -11px -22px;
 }
 
 .social-btn-fb {
-  background-position: 14px -62px;
+  background-position: -5px -62px;
 }
 
 .social-btn-inst {
-  background-position: 11px -103px;
+  background-position: -8px -103px;
 }
 
 .footer-copyright {
@@ -971,3 +1033,183 @@ h2 {
 .footer-copyright .btn {
   margin-right: 0;
 }
+
+.modal-content {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  
+  width: 300px;
+  margin-left: -230px;
+  padding: 50px 80px; 
+  color: black;
+  background: #f8f3f0 url("../img/background-light.png");
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-content-map {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  
+  width: 766px;
+  height: 561px;
+  margin-top: -280px;
+  margin-left: -390px;
+  
+  background: #e9e5dc url("../img/map.png");
+  border: 7px solid white;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  
+  width: 100%;
+  height: 100%;
+  
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-close {
+  position: absolute;
+  top: 0;
+  right: -34px;
+  
+  width: 22px;
+  height: 22px;
+  
+  font-size: 0;
+  
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.modal-content-close::before,
+.modal-content-close::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  
+  width: 19px;
+  height: 3px;
+  background-color: #d0d0d0;
+  border-radius: 1px;
+}
+
+.modal-content-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-content-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-content h2 {
+  margin: 0;
+  margin-bottom: 20px;
+  
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.modal-content p {
+  margin: 0;
+  margin-bottom: 14px;
+}
+
+.modal-content .login-form {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 236px;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  padding-right: 40px;
+  
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
+  color: black;
+  text-transform: uppercase;
+  
+  background-color: #f9f6f3;
+  border: 2px solid black;
+  outline: none;
+}
+
+.login-form input.icon-user {
+  background: url("../img/sprite.png") no-repeat 240px -143px; 
+}
+
+.login-form input.icon-password {
+  background: url("../img/sprite.png") no-repeat 240px -177px; 
+}
+
+.login-form .restore {
+  float: right;
+  color: black;
+}
+
+.login-form .btn {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.login-checkbox {
+  position: relative;
+  
+  padding-left: 30px;
+  
+  cursor: pointer;
+}
+
+.login-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.login-checkbox input[type="checkbox"] + .checkbox-indicator {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  
+  width: 17px;
+  height: 17px;
+  
+  border: 2px solid black;
+}
+
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before,
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 1px;
+  
+  width: 15px;
+  height: 2px;
+  background: black;
+}
+
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before {
+  transform: rotate(45deg);
+}
+
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
+  transform: rotate(-45deg);
+}
+

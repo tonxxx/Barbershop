@@ -3,29 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Барбершоп "Бородинский"</title>
-    <link rel="stylesheet" href="normalize.css">    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/normalize.css">    
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
   </head>
-  <body class="no_backg_image4body">
+  <body class="innerpage">
     <header class="main-header">
       <div class="container clearfix">
-        <nav class="main-navigation other_pages">           
-          <ul>  
-            <li>
-              <a href="#">Barbershop</a><!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! ????????????? HOW TO USE IMG HERE ????????????????? НЕ МОГУ ДОБИТЬСЯ ЧТОБ ВСТАЛО ПО ЦЕНТРУ И РАБОТАЛА ПОДСВеТКА ВОКРУГ!!! -->         
-            </li>
+        <nav class="main-navigation">           
+              <a class="logo-inner" href="index.html"><img src="img/logo-small.png" alt="" width="111" height="24"></a><!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! ЭТО МЫ ВЫНОСИМ ЗА ПРЕДЕЛЫ UL>LI!!!! ВОТ ТОГДА УЖЕ НОРМАЛЬНО ВСЁ РАБОТАЕТ!!!! -->      
+            <ul>
             <li>
               <a href="#">Информация</a>
             </li>
             <li>
               <a href="#">Новости</a>
             </li>
-            <li>
-              <a href="#">Прайс-лист</a>
+            <li> <!-- У МЕНЯ БЫЛО ЭТО НА ССЫЛКЕ И МНЕ КАЗАЛОСЬ ТАК УДАЧНЕЕ НО ЛЕКТОР ГОВОРИТ ЧТО ТАК ПЁЗЖЕ ТИПА ПОТОМУ ЧТО ТАК МОЖНО ЗАПРЕТИТЬ У АКТИВНОЙ СТРАНИЦЫ ИМЕТЬ ССЫЛКУ НА САМУ СЕБЯ ТИПА!!! ТУПО УБРАЛИ HREF НАПРИМЕР ИЛИ ВАЩЕ ТЭГ А НА СПАН СМЕНИТЬ МОЖНО!! но тогда нужно будет сделать СТИЛЬ ДЛЯ ЭТОГО СПАНА -->
+              <a href="price.html">Прайс-лист</a>
             </li>
-            <li>
-              <a href="#" class="current_page">Магазин</a>
+            <li class="current_page">
+              <a href="shop.html">Магазин</a>
             </li>
             <li>
               <a href="#">Контакты</a>
@@ -37,14 +35,14 @@
         </div>        
       </div>
     </header>
-    <main class="background-lite clearfix">
+    <main class="clearfix">
     <div class="container">
     <article class="item-info">
       <div class="item-heading">
         <h1>Набор для путешествий "Baxter of California"</h1>
         <ul class="nav_breadcumbs">
-          <li>Главная</li>
-          <li>Магазин</li>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="shop.html">Магазин</a></li>
           <li>Средства для ухода</li>
           <li>Набор для путешествий "Baxter of California"</li>
         </ul>

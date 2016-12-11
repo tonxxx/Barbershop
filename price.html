@@ -3,29 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Барбершоп "Бородинский"</title>
-    <link rel="stylesheet" href="normalize.css">    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/normalize.css">    
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
   </head>
-  <body class="no_backg_image4body">
+  <body class="innerpage">
       <header class="main-header">
       <div class="container clearfix">
-        <nav class="main-navigation other_pages">           
-          <ul>  
-            <li>
-              <a href="#">Barbershop</a><!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! ????????????? HOW TO USE IMG HERE ????????????????? НЕ МОГУ ДОБИТЬСЯ ЧТОБ ВСТАЛО ПО ЦЕНТРУ И РАБОТАЛА ПОДСВеТКА ВОКРУГ!!! -->         
-            </li>
+        <nav class="main-navigation">           
+              <a class="logo-inner" href="index.html"><img src="img/logo-small.png" alt="" width="111" height="24"></a><!-- здесь говорят лучше было сделать A потому что это всё таки ссылка на главную!! ЭТО МЫ ВЫНОСИМ ЗА ПРЕДЕЛЫ UL>LI!!!! ВОТ ТОГДА УЖЕ НОРМАЛЬНО ВСЁ РАБОТАЕТ!!!! -->      
+            <ul>
             <li>
               <a href="#">Информация</a>
             </li>
             <li>
               <a href="#">Новости</a>
             </li>
-            <li>
-              <a href="#" class="current_page">Прайс-лист</a>
+            <li class="current_page"> <!-- У МЕНЯ БЫЛО ЭТО НА ССЫЛКЕ И МНЕ КАЗАЛОСЬ ТАК УДАЧНЕЕ НО ЛЕКТОР ГОВОРИТ ЧТО ТАК ПЁЗЖЕ ТИПА ПОТОМУ ЧТО ТАК МОЖНО ЗАПРЕТИТЬ У АКТИВНОЙ СТРАНИЦЫ ИМЕТЬ ССЫЛКУ НА САМУ СЕБЯ ТИПА!!! ТУПО УБРАЛИ HREF НАПРИМЕР ИЛИ ВАЩЕ ТЭГ А НА СПАН СМЕНИТЬ МОЖНО!! но тогда нужно будет сделать СТИЛЬ ДЛЯ ЭТОГО СПАНА -->
+              <a>Прайс-лист</a>
             </li>
             <li>
-              <a href="#">Магазин</a>
+              <a href="shop.html">Магазин</a>
             </li>
             <li>
               <a href="#">Контакты</a>
@@ -37,28 +35,33 @@
         </div>        
       </div>
     </header>
-    <main class="background-lite clearfix">
+    <main class="clearfix">
     <div class="container">
     <div class="main-content">
-      <h1>Прайс-лист</h1>
-      <ul class="nav_breadcumbs">
-        <li>Главная</li>
-        <li>Прайс-лист</li>
-      </ul>
-      <b class="price-highlight"><span>Истинно мужская классика</span></b>
-      <div class="price-highlightsblock">
-        <div class="price-quarterblock">
+      <div class="inner-page-title"> <!-- СЮДА ЛУЧШЕ В ДИВ ОБЕРНУТЬ!!! -->
+        <h1>Прайс-лист</h1> 
+        <ul class="nav_breadcumbs">
+          <li><a href="#">Главная</a></li>
+          <li>Прайс-лист</li>
+        </ul>
+      </div>
+      <div class="inner-content"> <!-- СЮДА ЛУЧШЕ В ДИВ ОБЕРНУТЬ ЭТО ТИПА ОБЩИЙ ДЛЯ КОНТЕНТА ВСЕГО!!! -->
+      <div class="big-heading">  <!-- У меня было H2 > SPAN но так мне больше нравится!! напомню что вложенность нужна чтоб перекрыть бэкграунда линию фоном!!! -->
+      <h2>Истинно мужская классика</h2>  <!-- ЭТО ТОЖЕ ЛУЧШЕ H2!!!!!!!! -->
+      </div>
+      <div class="inner-columns clearfix"> <!-- тут я делал 4 бло ка БЕЗ КОЛОНОК но получается их позиционирвать сложнее!!!! -->
+        <div class="inner-column-left">
           <h2>Мы используем только<br> лучшие средства:</h2>
-          <ul>
+          <ul class="custom_list1">   <!--ТАК НАМНОГО УДАЧНЕЕ!!!!!!!! ПОТОМУ ЧТО ЭТО ЖЕ НЕ РАЗМЕТОЧНЫЕ ЦЕЛИ А ИМЕННО ЧТО НЕСТАНДАРТНЫЙ ТИП СПИСКА!!!!!!!!!! -->
             <li>Baxter of California</li>
             <li>Mr Natty</li>
             <li>Suavecito</li>
             <li>Malin+Goetz</li>
           </ul>
         </div>
-        <div class="price-quarterblock">
+        <div class="inner-column-right"> 
           <h2>Цены на услуги <br>наших мастеров:</h2>
-          <table>
+          <table class="prices-table">
             <tr>
               <td>Стрижка</td>
               <td>1500 Р.</td>
@@ -73,13 +76,16 @@
             </tr>
           </table>
         </div>
-        <div class="price-quarterblock">
-          <h2>Несколько слов о нас:</h2>
-          <p>Наша парихмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.</p>
         </div>
-        <div class="price-quarterblock">
+        <div class="inner-columns clearfix">
+        <h2>Несколько слов о нас:</h2>   <!-- ХИТРО СУКА ПРИДУМАЛИ ЧТОБ ВЫРАВНЯЛИСЬ СНИЗУ АБЗАЦЫ!!!!!!!!!!! -->
+        <div class="inner-column-left">
+          <p class="short_text">Наша парихмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.</p>
+        </div>
+        <div class="inner-column-right">
           <p>Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!</p>
         </div>
+      </div>
       </div>
     </div>  
       
